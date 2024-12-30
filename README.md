@@ -1,2 +1,2 @@
 # E-Commerce
-A simple e_commerce web app using Vite React
+A simple e_commerce web app using Vite React and Bootstrap CSS
