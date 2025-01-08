@@ -2,7 +2,7 @@
   "name": "e-commerce",
   "version": "1.0.0",
   "description": "A simple e_commerce web app using Vite React and Bootstrap CSS",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "dev": "nodemon backend/server.js"
   },
@@ -13,7 +13,7 @@
   "dependencies": {
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "mongoose": "^8.9.2"
+    "mongoose": "^8.9.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
