@@ -1,0 +1,38 @@
+// Import Axios for making HTTP requests
+import axios from "axios";
+
+// Create an instance of Axios with a base URL
+const API = axios.create({
+  baseURL: "http://localhost:5000/api", // Replace with your backend's base URL
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
+// Add a request interceptor (optional, for adding tokens or logging)
+API.interceptors.request.use(
+  (config) => {
+    // Example: Attach an authorization token if available
+    const token = localStorage.getItem("authToken");
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
+
+// Add a response interceptor (optional, for handling errors globally)
+API.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    // Example: Handle unauthorized errors globally
+    if (error.response && error.response.status === 401) {
+      console.error("Unauthorized, logging out...");
+      // Add logout logic here if needed
+    }
+    return Promise.reject(error);
+  }
+);
+
+export default API;
