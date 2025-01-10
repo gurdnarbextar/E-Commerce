@@ -8,7 +8,8 @@ dotenv.config();
 
 const app = express();
 
-app.use(express.json()); //allows us to accept json data in the req.body
+// Middleware to parse JSON
+app.use(express.json());
 
 app.get("/api/products", productRoutes);
 
