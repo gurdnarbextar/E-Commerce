@@ -1,6 +1,6 @@
-import React from 'react';
-import { SunIcon, MoonIcon } from '@heroicons/react/24/solid'; // Import Heroicons
-import useDarkMode from '../hooks/useDarkMode'; // Adjust the path as necessary
+import React from "react";
+import { SunIcon, MoonIcon } from "@heroicons/react/24/outline"; // Import Heroicons
+import useDarkMode from "../hooks/useDarkMode"; // Adjust the path as necessary
 
 const DarkModeToggle = () => {
   const [isDarkMode, setIsDarkMode] = useDarkMode();
